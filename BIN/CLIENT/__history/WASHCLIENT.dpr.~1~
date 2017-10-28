@@ -1,0 +1,21 @@
+program WASHCLIENT;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  ClientClassUnit in 'C:\Users\ALEXANDR\Documents\DAOVEL\CLIENT\ClientClassUnit.pas',
+  FMX.FontGlyphs.Android in 'C:\Users\ALEXANDR\Documents\DAOVEL\CLIENT\FMX.FontGlyphs.Android.pas',
+  FMX.FontGlyphs in 'C:\Users\ALEXANDR\Documents\DAOVEL\CLIENT\FMX.FontGlyphs.pas',
+  FontAwesome in 'C:\Users\ALEXANDR\Documents\DAOVEL\CLIENT\FontAwesome.pas',
+  Maps.Engine in 'C:\Users\ALEXANDR\Documents\DAOVEL\CLIENT\Maps.Engine.pas',
+  UnitMain in 'C:\Users\ALEXANDR\Documents\DAOVEL\CLIENT\UnitMain.pas' {Form3},
+  ClientModuleUnit in '..\ClientModuleUnit.pas' {dmClient: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TdmClient, dmClient);
+  Application.Run;
+end.

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.657,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\CLIENT\FontAwesome.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.982,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\CLIENT\Unit1.pas=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\SERVER\ClientClassesUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.401,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\CLIENT\FMX.FontGlyphs.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.053,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\CLIENT\Maps.Engine.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.448,=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\CLIENT\ClientModuleUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.744,=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\SERVER\ClientClassesUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.650,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\SERVER\ClientClassesUnit.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.645,=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\CLIENT\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.522,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\CLIENT\FMX.FontGlyphs.Android.pas=</Transaction>
+    <Transaction>2017.10.28 06:26:08.860,=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\BIN\CLIENT\Unit1.pas</Transaction>
+    <Transaction>2017.10.28 06:26:31.101,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\BIN\CLIENT\ClientClassesUnit.pas=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\BIN\CLIENT\Unit1.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android="0123456789ABCDEF"/>
+	</ActiveMobileDevice>
+</BorlandProject>

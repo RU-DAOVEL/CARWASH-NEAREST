@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{962F296C-5351-46FC-A355-3B839A9C7FAC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="BIN\CLIENT\WASHCLIENT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="BIN\SERVER\WASHSRV.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="WASHCLIENT">
+        <MSBuild Projects="BIN\CLIENT\WASHCLIENT.dproj"/>
+    </Target>
+    <Target Name="WASHCLIENT:Clean">
+        <MSBuild Projects="BIN\CLIENT\WASHCLIENT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WASHCLIENT:Make">
+        <MSBuild Projects="BIN\CLIENT\WASHCLIENT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WASHSRV">
+        <MSBuild Projects="BIN\SERVER\WASHSRV.dproj"/>
+    </Target>
+    <Target Name="WASHSRV:Clean">
+        <MSBuild Projects="BIN\SERVER\WASHSRV.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WASHSRV:Make">
+        <MSBuild Projects="BIN\SERVER\WASHSRV.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="WASHCLIENT;WASHSRV"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="WASHCLIENT:Clean;WASHSRV:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="WASHCLIENT:Make;WASHSRV:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

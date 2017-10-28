@@ -1,0 +1,228 @@
+﻿unit MainUnit;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl,
+  FMX.StdCtrls, FMX.Controls.Presentation, FMX.ListView.Types, FMX.ListView.Appearances,
+  FMX.ListView.Adapters.Base, FMX.ListView, System.Rtti, System.Bindings.Outputs,
+  Fmx.Bind.Editors, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Data.Bind.Components,
+  Data.Bind.DBScope, FMX.MultiView, FontAwesome, FMX.Effects, FMX.Layouts, FMX.Objects,
+  FMX.ListBox, System.Actions, FMX.ActnList, FMX.Gestures;
+
+type
+  TForm3 = class(TForm)
+    tlb_1: TToolBar;
+    lbl_1: TLabel;
+    tbc_Page: TTabControl;
+    tb_Map: TTabItem;
+    tb_MapList: TTabItem;
+    bs_Wash: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    mltvw_1: TMultiView;
+    btn_1: TSpeedButton;
+    btn_2: TSpeedButton;
+    lvWashList: TListView;
+    StyleBook1: TStyleBook;
+    LinkListControlToField2: TLinkListControlToField;
+    lv1: TListView;
+    lbl1: TLabel;
+    CornerButton1: TCornerButton;
+    Layout1: TLayout;
+    ShadowEffect1: TShadowEffect;
+    CornerButton2: TCornerButton;
+    tbService: TTabItem;
+    CalloutPanel2: TCalloutPanel;
+    Layout8: TLayout;
+    lblTCalendar: TLabel;
+    lblDataDetails: TLabel;
+    lblTTime: TLabel;
+    lblTimeDetails: TLabel;
+    lblWashName: TLabel;
+    Layout9: TLayout;
+    lbl2: TLabel;
+    cbbClassAvto: TComboBox;
+    img1: TImage;
+    lvUsluga: TListView;
+    BindSourceDB2: TBindSourceDB;
+    LinkListControlToField1: TLinkListControlToField;
+    BindSourceDB3: TBindSourceDB;
+    LinkListControlToField3: TLinkListControlToField;
+    tbOrder: TTabItem;
+    tb1: TTabItem;
+    sbScrol: TVertScrollBox;
+    Layout5: TLayout;
+    lblTimeIco: TLabel;
+    lblTime: TLabel;
+    lblService: TLabel;
+    lblPhone: TLabel;
+    Layout6: TLayout;
+    lblDescription: TLabel;
+    lblInfo: TLabel;
+    Layout7: TLayout;
+    lbl3: TLabel;
+    lbl4: TLabel;
+    Layout2: TLayout;
+    lblPrice: TLabel;
+    ShadowEffect12: TShadowEffect;
+    lblMoney: TLabel;
+    GestureManager1: TGestureManager;
+    actlst1: TActionList;
+    actNext: TNextTabAction;
+    actPrevious: TPreviousTabAction;
+    LinkPropertyToFieldText: TLinkPropertyToField;
+    LinkPropertyToFieldText2: TLinkPropertyToField;
+    LinkPropertyToFieldText3: TLinkPropertyToField;
+    LinkPropertyToFieldText4: TLinkPropertyToField;
+    LinkPropertyToFieldText5: TLinkPropertyToField;
+    LinkPropertyToFieldText6: TLinkPropertyToField;
+    procedure tbc_PageChange(Sender: TObject);
+    procedure lvWashListUpdateObjects(const Sender: TObject; const AItem: TListViewItem);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.fmx}
+uses
+  ClientModuleUnit;
+
+procedure TForm3.lvWashListUpdateObjects(const Sender: TObject; const AItem: TListViewItem);
+var
+  ItemID, ItemName, ItemAdress, ItemStatus, ItemMapStatus, ItemLatitude, ItemLongitude, ItemDistancy, ItemTime, ItemImgTime, ItemTOpen, ItemTClose, ItemTStar, ItemStar, ItemInfo: TListItemText;
+  ItemMore: TListItemAccessory;
+  tOpen, tClose: TTime;
+  i: Integer;
+  s: string;
+begin
+  ItemStatus := AItem.Objects.FindDrawable('Status') as TListItemText;
+  ItemMapStatus := AItem.Objects.FindDrawable('imgStatus') as TListItemText;
+
+  if (ItemStatus <> nil) and (ItemMapStatus <> nil) then
+  begin
+
+    ItemMapStatus.Font.Size := 30;
+    ItemMapStatus.Text := fa_map_marker;
+    ItemMapStatus.Font.Family := FontAwesomeName;
+
+    if ItemStatus.Text = '0' then
+      ItemMapStatus.TextColor := TAlphaColorRec.Gray;
+
+    if ItemStatus.Text = '1' then
+      ItemMapStatus.TextColor := TAlphaColorRec.Green;
+
+    if ItemStatus.Text = '2' then
+      ItemMapStatus.TextColor := TAlphaColorRec.Red;
+  end;
+
+  ItemMore := AItem.Objects.FindDrawable('More') as TListItemAccessory;
+
+  if (ItemMore <> nil) then
+  begin
+    if ItemStatus.Text <> '0' then
+      ItemMore.Visible := True
+    else
+      ItemMore.Visible := False;
+  end;
+
+ { ItemStar := AItem.Objects.FindDrawable('Star') as TListItemText;
+  ItemTStar := AItem.Objects.FindDrawable('tStar') as TListItemText;
+
+  if (ItemStar <> nil) and (ItemTStar <> nil) then
+  begin
+    s := '';
+    ItemStar.Font.Size := 18;
+    ItemStar.Font.Family := FontAwesomeName;
+
+    if (ItemStatus.Text <> '0') and (ItemTStar.Text <> '') then
+    begin
+      for i := 1 to ItemTStar.Text.ToInteger do
+      begin
+        s := s + fa_star;
+
+      end;
+      for i := ItemTStar.Text.ToInteger + 1 to 5 do
+      begin
+        s := s + fa_star_o;
+      end;
+    end
+    else
+      for i := 1 to 5 do
+      begin
+        s := s + fa_star_o;
+      end;
+
+    ItemStar.Text := s;
+
+    if (s = fa_star_o + fa_star_o + fa_star_o + fa_star_o + fa_star_o) and (ItemTStar.Text = '0') then
+      ItemStar.TextColor := TAlphaColorRec.Red
+    else
+      ItemStar.TextColor := TAlphaColorRec.Goldenrod;
+  end;
+
+  ItemInfo := AItem.Objects.FindDrawable('Info') as TListItemText;
+          }
+  if (ItemInfo <> nil) then
+  begin
+    ItemInfo.Font.Size := 18;
+    ItemInfo.TextColor := TAlphaColorRec.Darkgray;
+    ItemInfo.Font.Family := FontAwesomeName;
+  end;
+
+  ItemImgTime := AItem.Objects.FindDrawable('imgTime') as TListItemText;
+  ItemTime := AItem.Objects.FindDrawable('Time') as TListItemText;
+  //ItemTOpen := AItem.Objects.FindDrawable('tOpen') as TListItemText;
+  //ItemTClose := AItem.Objects.FindDrawable('tClose') as TListItemText;
+
+  if (ItemImgTime <> nil) and (ItemTime <> nil) then
+  begin
+    ItemImgTime.Font.Size := 20;
+    ItemImgTime.Text := fa_clock_o;
+    ItemImgTime.Font.Family := FontAwesomeName;
+
+    if ItemTime.Text = '24 часа!' then
+      ItemImgTime.TextColor := TAlphaColorRec.Green
+    else
+      ItemImgTime.TextColor := TAlphaColorRec.Teal;
+
+  end;
+
+  ItemAdress := AItem.Objects.FindDrawable('Adress') as TListItemText;
+
+  if ItemAdress <> nil then
+    ItemAdress.Width := lvWashList.Width - 80;
+
+  ItemName := AItem.Objects.FindDrawable('Name') as TListItemText;
+  if ItemName <> nil then
+    ItemName.Width := lvWashList.Width - 100;
+
+  ItemLatitude := AItem.Objects.FindDrawable('Latitude') as TListItemText;
+  ItemLongitude := AItem.Objects.FindDrawable('Longitude') as TListItemText;
+  ItemDistancy := AItem.Objects.FindDrawable('Distancy') as TListItemText;
+
+  if (ItemLatitude <> nil) and (ItemLongitude <> nil) and (ItemLatitude.Text <> '') and (ItemLongitude.Text <> '') and (ItemDistancy <> nil) then
+  begin
+    ItemDistancy.Text := FormatFloat('≈ 0.00 км', 25{WebGMaps.Distance(ItemLatitude.Text.ToDouble, ItemLongitude.Text.ToDouble, lat, lon)});
+  end;
+
+end;
+
+procedure TForm3.tbc_PageChange(Sender: TObject);
+begin
+
+ {if tbc_Page.ActiveTab = tb_Map then
+    frm_Map.Visible := True
+  else
+    frm_Map.Visible := False;}
+
+end;
+
+end.
+

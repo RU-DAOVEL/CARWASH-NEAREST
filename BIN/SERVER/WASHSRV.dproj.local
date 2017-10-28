@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.169,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientModuleUnit.pas=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientModuleUnit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.811,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ServerContainerUnit.dfm=C:\Users\ALEXANDR\Documents\DAOVEL\ServerContainerUnit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.811,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ServerContainerUnit.pas=C:\Users\ALEXANDR\Documents\DAOVEL\ServerContainerUnit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.195,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ServerMethodsUnit.dfm=C:\Users\ALEXANDR\Documents\DAOVEL\ServerMethodsUnit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.782,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\SERVER\ClientModuleUnit.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.240,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ServerConst.pas=C:\Users\ALEXANDR\Documents\DAOVEL\ServerConst1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.751,=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientClassesUnit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.550,=C:\Users\ALEXANDR\Documents\DAOVEL\ServerContainerUnit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.410,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\WASHSRV.dproj=C:\Users\ALEXANDR\Documents\DAOVEL\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.169,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientModuleUnit.dfm=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientModuleUnit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.660,=C:\Users\ALEXANDR\Documents\DAOVEL\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.854,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientClassesUnit.pas=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientClassesUnit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.931,=C:\Users\ALEXANDR\Documents\DAOVEL\ServerConst1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.195,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ServerMethodsUnit.pas=C:\Users\ALEXANDR\Documents\DAOVEL\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.935,=D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\ClientModuleUnit1.pas</Transaction>
+    <Transaction>2017.10.28 06:25:30.798,D:\DAOVEL MOBILE CORPORATION\CARWASH NEAREST\BIN\SERVER\ClientClassesUnit.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

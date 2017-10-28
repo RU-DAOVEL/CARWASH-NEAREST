@@ -1,0 +1,22 @@
+program WASHCLIENT;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  FMX.FontGlyphs.Android in 'FMX.FontGlyphs.Android.pas',
+  FMX.FontGlyphs in 'FMX.FontGlyphs.pas',
+  FontAwesome in 'FontAwesome.pas',
+  Maps.Engine in 'Maps.Engine.pas',
+  MainUnit in 'MainUnit.pas' {Form3},
+  ClientModuleUnit in '..\ClientModuleUnit.pas' {dmClient: TDataModule},
+  ClientClassUnit in 'ClientClassUnit.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm3, Form3);
+  Application.CreateForm(TdmClient, dmClient);
+  Application.Run;
+
+end.

@@ -1,0 +1,142 @@
+object dmClient: TdmClient
+  OldCreateOrder = False
+  Height = 271
+  Width = 415
+  object SQLConnection1: TSQLConnection
+    DriverName = 'DataSnap'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverUnit=Data.DBXDataSnap'
+      
+        'DriverAssemblyLoader=Borland.Data.TDBXClientDriverLoader,Borland' +
+        '.Data.DbxClientDriver,Version=24.0.0.0,Culture=neutral,PublicKey' +
+        'Token=91d62ebb5b0d1b1b'
+      'Port=7777777'
+      'HostName=192.168.0.10'
+      'CommunicationProtocol=tcp/ip'
+      'DSAuthenticationPassword=password'
+      'DSAuthenticationUser=login'
+      'DatasnapContext=datasnap/'
+      'Filters={}')
+    Connected = True
+    Left = 48
+    Top = 40
+    UniqueId = '{46257349-69CA-4BAD-9880-1FCA01CB7B66}'
+  end
+  object DSProvider: TDSProviderConnection
+    ServerClassName = 'TServerMethods'
+    Connected = True
+    SQLConnection = SQLConnection1
+    Left = 136
+    Top = 88
+  end
+  object cds_Services: TClientDataSet
+    Active = True
+    Aggregates = <>
+    IndexFieldNames = 'WASH_ID;TYPE_ID'
+    MasterFields = 'wash_id;id'
+    MasterSource = ds_2
+    PacketRecords = 0
+    Params = <>
+    ProviderName = 'VIEW_WASH_SERVICE'
+    RemoteServer = DSProvider
+    Left = 344
+    Top = 120
+  end
+  object ds_1: TDataSource
+    DataSet = cds_Wash
+    Left = 248
+    Top = 56
+  end
+  object cds_Class: TClientDataSet
+    Active = True
+    Aggregates = <>
+    IndexFieldNames = 'wash_id'
+    MasterFields = 'ID'
+    MasterSource = ds_1
+    PacketRecords = 0
+    Params = <
+      item
+        DataType = ftAutoInc
+        Name = 'WASH_ID'
+        ParamType = ptInput
+        Value = 1
+      end>
+    ProviderName = 'CLASSAVTO'
+    RemoteServer = DSProvider
+    Left = 216
+    Top = 152
+  end
+  object ds_2: TDataSource
+    DataSet = cds_Class
+    Left = 296
+    Top = 112
+  end
+  object ds4: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    RemoteServer = DSProvider
+    Left = 352
+    Top = 200
+  end
+  object cds_Wash: TClientDataSet
+    Aggregates = <>
+    IndexFieldNames = 'id'
+    Params = <>
+    ProviderName = 'VIEW_WASH'
+    RemoteServer = DSProvider
+    Left = 192
+    Top = 120
+    object cds_WashID: TLongWordField
+      FieldName = 'ID'
+      Origin = 'ID'
+    end
+    object cds_WashWASH_NAME: TWideStringField
+      FieldName = 'WASH_NAME'
+      Origin = 'WASH_NAME'
+      Size = 100
+    end
+    object cds_WashWASH_DESCRIPTION: TWideMemoField
+      FieldName = 'WASH_DESCRIPTION'
+      Origin = 'WASH_DESCRIPTION'
+      BlobType = ftWideMemo
+    end
+    object cds_WashWASH_ADRESS: TWideStringField
+      FieldName = 'WASH_ADRESS'
+      Origin = 'WASH_ADRESS'
+      Size = 255
+    end
+    object cds_WashWASH_PHONE: TWideStringField
+      FieldName = 'WASH_PHONE'
+      Origin = 'WASH_PHONE'
+    end
+    object cds_WashWASH_STAR: TBCDField
+      FieldName = 'WASH_STAR'
+      Origin = 'WASH_STAR'
+      Precision = 14
+    end
+    object cds_WashWASH_LAT: TWideStringField
+      FieldName = 'WASH_LAT'
+      Origin = 'WASH_LAT'
+      Size = 15
+    end
+    object cds_WashWASH_LON: TWideStringField
+      FieldName = 'WASH_LON'
+      Origin = 'WASH_LON'
+      Size = 15
+    end
+    object cds_WashSTATUS: TIntegerField
+      FieldName = 'STATUS'
+      Origin = '`STATUS`'
+    end
+    object cds_WashWAH_TIME: TWideStringField
+      FieldName = 'WAH_TIME'
+      Origin = 'WAH_TIME'
+      Size = 19
+    end
+    object cds_Washjday: TIntegerField
+      FieldName = 'jday'
+      Origin = 'jday'
+    end
+  end
+end
